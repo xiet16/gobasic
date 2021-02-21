@@ -13,5 +13,6 @@ func main() {
 	basic.FloatTest()
 	basic.PointerTest()
 	basic.ArrayTest()
+	basic.StructTest()
 	pgs.Excute()
 }
