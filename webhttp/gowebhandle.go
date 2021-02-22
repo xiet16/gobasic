@@ -55,6 +55,13 @@ func HttpMultiPartFrom(w http.ResponseWriter, r *http.Request) {
 
 }
 
+//响应
+
+//cookie session
+func CookieAndSession(w http.ResponseWriter, r *http.Request) {
+
+}
+
 func HttpHandleTest() {
 	http.HandleFunc("/", ServeHTTP)
 	http.HandleFunc("/getFormAndPostFrom", HttpFormAndPostFrom)
