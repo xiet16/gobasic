@@ -24,6 +24,26 @@ func (handler *DefineHandle) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	rawQuery := r.URL.RawQuery
 	va, _ := url.ParseQuery(rawQuery)
 	fmt.Fprintln(w, "获取url当中rawquery的值", va.Get("name"))
+
+	//获取header
+	for key := range r.Header {
+		fmt.Fprintf(w, "请求头%s的值为:%s\n", key, r.Header[key])
+	}
+
+	//获取body
+	//body是一个接口，继承了 io.ReadCloser,  ReadCloser 继承了Reader、Closer , Reader接口定了了Read 方法
+	//Read(p []byte) (n int, err error)
+
+	//curl -id "action=search&resposne body" localhost:8380/getuserinfo
+	len := r.ContentLength
+	bodydata := make([]byte, len)
+	r.Body.Read(bodydata)
+	fmt.Fprintln(w, string(bodydata))
+
+	//获取form 和postform This field is only available after ParseForm is called.
+	r.ParseForm()
+	fmt.Fprintln(w, r.Form)
+	fmt.Fprintln(w, r.PostForm)
 }
 
 func HttpHandleTest() {
