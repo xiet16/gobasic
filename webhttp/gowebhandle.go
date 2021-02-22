@@ -39,15 +39,26 @@ func (handler *DefineHandle) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	bodydata := make([]byte, len)
 	r.Body.Read(bodydata)
 	fmt.Fprintln(w, string(bodydata))
+}
 
+func HttpFormAndPostFrom(w http.ResponseWriter, r *http.Request) {
 	//获取form 和postform This field is only available after ParseForm is called.
 	r.ParseForm()
 	fmt.Fprintln(w, r.Form)
 	fmt.Fprintln(w, r.PostForm)
 }
 
+//这个是文件的Form 传输方式 postman 要怎么弄
+func HttpMultiPartFrom(w http.ResponseWriter, r *http.Request) {
+	//要定义最大内存
+	r.ParseMultipartForm(1024)
+
+}
+
 func HttpHandleTest() {
 	http.HandleFunc("/", ServeHTTP)
+	http.HandleFunc("/getFormAndPostFrom", HttpFormAndPostFrom)
+
 	defineHandle := DefineHandle{}
 	http.Handle("/getuserinfo", &defineHandle)
 	http.ListenAndServe("0.0.0.0:8380", nil)
