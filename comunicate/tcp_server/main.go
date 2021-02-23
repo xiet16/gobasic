@@ -1,4 +1,4 @@
-package basic
+package tcp_server
 
 import (
 	"bytes"
@@ -19,12 +19,12 @@ func ErrorPackageTest() {
 		if err != nil {
 			fmt.Println("data receive error", err.Error())
 		} else {
-			go DealPackageHandler(conn)
+			go DealErrorPackageHandler(conn)
 		}
 	}
 }
 
-func DealPackageHandler(conn net.Conn) {
+func DealErrorPackageHandler(conn net.Conn) {
 	defer conn.Close()
 	defer fmt.Println("连接关闭")
 	fmt.Println("新连入地址:", conn.RemoteAddr)

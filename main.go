@@ -5,7 +5,6 @@ import (
 
 	"xiet16.com/golearn/basic"
 	"xiet16.com/golearn/pgs"
-	"xiet16.com/golearn/webhttp"
 )
 
 func main() {
@@ -18,6 +17,6 @@ func main() {
 	// basic.PointerTest()
 	// basic.ArrayTest()
 	// basic.StructTest()
-
-	webhttp.HttpHandleTest()
+	basic.DataSplitTest()
+	//webhttp.HttpHandleTest()
 }
