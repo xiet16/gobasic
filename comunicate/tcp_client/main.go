@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"math/rand"
 	"net"
+	"strconv"
 	"time"
 )
 
@@ -18,12 +19,13 @@ func NormalClient() {
   然后添加2个字节的长度
 */
 func DefinePackageClient() {
-	conn, err := net.DialTimeout("tcp", "localhost:8503", time.Second*30)
+	conn, err := net.DialTimeout("tcp", "localhost:8500", time.Second*30)
 	if err != nil {
 		fmt.Println("tcp client start error:", err.Error)
+		return
 	}
 
-	for {
+	for i := 1; i < 10; i++ {
 		packgeBuf := GetSendMsg()
 		_, err := conn.Write(packgeBuf.Bytes())
 		if err != nil {
@@ -36,8 +38,9 @@ func GetSendMsg() *bytes.Buffer {
 	var str string
 	num := rand.Intn(6) + 5
 	for i := 1; i <= num; i++ {
-		str += string(i)
+		str += strconv.Itoa(i)
 	}
+	str += " 数字长度" + strconv.Itoa(num)
 	content := []byte(str)
 	cLen := len(content)
 	headerBuf := make([]byte, 4)
@@ -51,5 +54,5 @@ func GetSendMsg() *bytes.Buffer {
 }
 
 func main() {
-
+	DefinePackageClient()
 }

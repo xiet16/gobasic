@@ -1,4 +1,4 @@
-package tcp_server
+package main
 
 import (
 	"bufio"
@@ -82,7 +82,7 @@ func packageSplitFunc(data []byte, atEOF bool) (advance int, token []byte, err e
 		var packagelen = int(datalen) + 6
 
 		//大于怎么办
-		if packagelen < len(data) {
+		if packagelen <= len(data) {
 			return packagelen, data[:packagelen], nil
 		}
 	}
@@ -92,7 +92,7 @@ func packageSplitFunc(data []byte, atEOF bool) (advance int, token []byte, err e
 func DealDefinePackageHandler(conn net.Conn) {
 	defer conn.Close()
 	defer fmt.Println("连接关闭")
-
+	fmt.Println("客户端连入，地址:", conn.RemoteAddr())
 	dataBuf := bytes.NewBuffer(nil)
 	// 由于 标识数据包长度 的只有两个字节 故数据包最大为 2^16+4(魔数)+2(长度标识)
 	var tmpBuf [65542]byte
@@ -103,8 +103,10 @@ func DealDefinePackageHandler(conn net.Conn) {
 		if err != nil {
 			if err == io.EOF {
 				continue
+			} else {
+				fmt.Println("deal package error:", err.Error())
+				break
 			}
-			fmt.Println("deal package error:", err.Error())
 		}
 		scanner := bufio.NewScanner(dataBuf)
 		scanner.Split(packageSplitFunc)
@@ -113,4 +115,8 @@ func DealDefinePackageHandler(conn net.Conn) {
 		}
 	}
 	dataBuf.Reset()
+}
+
+func main() {
+	DefinePackageTest()
 }
