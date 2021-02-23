@@ -46,9 +46,9 @@ func DefineNewSingleHostReverseProxy(target *url.URL) *httputil.ReverseProxy {
 	//添加modify
 
 	modifyFunc := func(*http.Response) error {
-
+		return nil
 	}
-	return &httputil.ReverseProxy{Director: director}
+	return &httputil.ReverseProxy{Director: director, ModifyResponse: modifyFunc}
 }
 
 func DefinejoinURLPath(a, b *url.URL) (path, rawpath string) {
