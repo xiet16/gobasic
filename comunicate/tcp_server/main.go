@@ -80,7 +80,6 @@ func packageSplitFunc(data []byte, atEOF bool) (advance int, token []byte, err e
 		var datalen int16
 		binary.Read(bytes.NewReader(data[4:6]), binary.BigEndian, &datalen)
 		var packagelen = int(datalen) + 6
-
 		//大于怎么办
 		if packagelen <= len(data) {
 			return packagelen, data[:packagelen], nil
