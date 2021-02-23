@@ -62,6 +62,7 @@
         >
           vuex
         </a>
+        <router-link to='MyFirst.html'><button>点我到第二个页面</button></router-link>
       </li>
       <li>
         <a
