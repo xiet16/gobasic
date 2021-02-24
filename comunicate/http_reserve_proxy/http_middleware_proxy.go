@@ -5,6 +5,10 @@ import (
 	"net/url"
 )
 
+/*
+定义切片路由middleware.NewSliceRouter()
+
+*/
 func middlewareProxy() {
 	reverseProxy := func(c *middleware.SliceRouterContext) http.Handler {
 		dst1 := ""
