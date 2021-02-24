@@ -20,9 +20,7 @@ func middlewareProxy() {
 		dst2 := ""
 		url2, err2 := url.Parse(dst1)
 		if err2 != nil {
-
 		}
-
 		urls := []*url.URL{url1, url2}
 		return proxy.NewMultipleHostsReverseProxy(c, urls)
 	}
