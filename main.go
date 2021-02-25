@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"xiet16.com/golearn/comunicate/proxytest"
+	"xiet16.com/golearn/basic"
 )
 
 func main() {
@@ -19,6 +19,8 @@ func main() {
 	// basic.ChainMiddlewareTest()
 	//basic.Middleware_V1Test()
 	//basic.Middleware_V3Test()
-	proxytest.RateLimitTest()
+	//proxytest.RateLimitTest()
+	//basic.HystrixCircuitTest()
+	basic.HystrixTest2()
 	//webhttp.HttpHandleTest()
 }
