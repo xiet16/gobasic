@@ -1,4 +1,4 @@
-package http_reserve_proxy
+package websocket_reverse_proxy
 
 import (
 	"flag"

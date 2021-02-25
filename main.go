@@ -2,8 +2,6 @@ package main
 
 import (
 	"fmt"
-
-	"xiet16.com/golearn/basic"
 )
 
 func main() {
@@ -22,6 +20,7 @@ func main() {
 	//proxytest.RateLimitTest()
 	//basic.HystrixCircuitTest()
 	//basic.HystrixTest2()
-	basic.WebsocketTest()
+	//basic.WebsocketTest()
+	//http_reserve_proxy.RealStart()
 	//webhttp.HttpHandleTest()
 }
