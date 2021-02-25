@@ -123,6 +123,11 @@ func (c *SliceRouterContext) Next() {
 	}
 }
 
+// 跳出中间件方法
+func (c *SliceRouterContext) Abort() {
+	c.index = abortIndex
+}
+
 // 重置回调
 func (c *SliceRouterContext) Reset() {
 	c.index = -1

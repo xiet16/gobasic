@@ -48,6 +48,7 @@ func NewMultipleHostsReverseProxy(c *middleware.SliceRouterContext, targets []*u
 		} else {
 			req.URL.RawQuery = targetQuery + "&" + req.URL.RawQuery
 		}
+		fmt.Println("proxy redirector:", req.URL)
 		if _, ok := req.Header["User-Agent"]; !ok {
 			req.Header.Set("User-Agent", "user-agent")
 		}

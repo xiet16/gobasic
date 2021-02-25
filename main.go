@@ -3,14 +3,12 @@ package main
 import (
 	"fmt"
 
-	"xiet16.com/golearn/basic"
-	"xiet16.com/golearn/pgs"
+	"xiet16.com/golearn/comunicate/proxytest"
 )
 
 func main() {
 	fmt.Println("learn start")
-	pgs.Excute()
-
+	//pgs.Excute()
 	/*basic包 基础语法学习*/
 	//basic.Vartest()
 	// basic.FloatTest()
@@ -20,6 +18,7 @@ func main() {
 	// basic.DataSplitTest()
 	// basic.ChainMiddlewareTest()
 	//basic.Middleware_V1Test()
-	basic.Middleware_V3Test()
+	//basic.Middleware_V3Test()
+	proxytest.RateLimitTest()
 	//webhttp.HttpHandleTest()
 }
