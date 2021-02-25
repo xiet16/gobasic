@@ -21,6 +21,7 @@ func main() {
 	//basic.Middleware_V3Test()
 	//proxytest.RateLimitTest()
 	//basic.HystrixCircuitTest()
-	basic.HystrixTest2()
+	//basic.HystrixTest2()
+	basic.WebsocketTest()
 	//webhttp.HttpHandleTest()
 }

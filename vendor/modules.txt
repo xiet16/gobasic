@@ -3,6 +3,9 @@
 github.com/afex/hystrix-go/hystrix
 github.com/afex/hystrix-go/hystrix/metric_collector
 github.com/afex/hystrix-go/hystrix/rolling
+# github.com/gorilla/websocket v1.4.2
+## explicit
+github.com/gorilla/websocket
 # github.com/smartystreets/goconvey v1.6.4
 ## explicit
 # github.com/wonderivan/logger v1.0.0
