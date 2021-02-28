@@ -14,7 +14,7 @@ import (
 websocket 是http 服务的升级，通过upgrader.Upgrage 可得到升级包
 */
 
-var addr = flag.String("addr", "localhost:2003", "http service address")
+var wsserverAddr = flag.String("wsserverAddr", "localhost:2003", "http service address")
 
 //为什么要定义这个方法
 var upgrader = websocket.Upgrader{
@@ -30,8 +30,8 @@ func WebsocketTest() {
 	http.HandleFunc("/", home)
 	http.HandleFunc("/echo", echo)
 	http.HandleFunc("/other", otherInfo)
-	log.Println("Starting websocket server at " + *addr)
-	log.Fatal(http.ListenAndServe(*addr, nil))
+	log.Println("Starting websocket server at " + *wsserverAddr)
+	log.Fatal(http.ListenAndServe(*wsserverAddr, nil))
 }
 
 //疑问，这个时候访问http://localhost:2003/echo会怎样

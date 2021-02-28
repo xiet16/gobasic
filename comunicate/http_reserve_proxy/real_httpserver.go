@@ -22,11 +22,11 @@ type RealServer struct {
 }
 
 //不好的写法,这样SayHelloHandler和SayHelloHandler 没有变量
-// func (server *RealServer) Run_Bad() {
-// 	http.HandleFunc("/", SayHelloHandler)
-// 	http.HandleFunc("/base/error", SayHelloHandler)
-// 	http.ListenAndServe(server.Addr, nil)
-// }
+func (server *RealServer) Run_Bad() {
+	// http.HandleFunc("/", SayHelloHandler)
+	// http.HandleFunc("/base/error", SayHelloHandler)
+	// http.ListenAndServe(server.Addr, nil)
+}
 
 func RealStart() {
 	s1 := &RealServer{Addr: "127.0.0.1:2003"}
@@ -39,6 +39,7 @@ func RealStart() {
 	<-quit
 }
 
+//Run方法
 func (r *RealServer) Run() {
 	log.Println(r.Addr + " start")
 	mux := http.NewServeMux()

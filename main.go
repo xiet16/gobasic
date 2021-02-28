@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+
+	"xiet16.com/golearn/comunicate/websocket_reverse_proxy"
 )
 
 func main() {
@@ -21,6 +23,7 @@ func main() {
 	//basic.HystrixCircuitTest()
 	//basic.HystrixTest2()
 	//basic.WebsocketTest()
+	websocket_reverse_proxy.WebsocketProxyTest()
 	//http_reserve_proxy.RealStart()
 	//webhttp.HttpHandleTest()
 }
