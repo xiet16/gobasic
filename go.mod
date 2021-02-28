@@ -7,5 +7,6 @@ require (
 	github.com/gorilla/websocket v1.4.2
 	github.com/smartystreets/goconvey v1.6.4 // indirect
 	github.com/wonderivan/logger v1.0.0
+	golang.org/x/net v0.0.0-20190311183353-d8887717615a
 	golang.org/x/time v0.0.0-20210220033141-f8bda1e9f3ba
 )

@@ -7,6 +7,8 @@ import (
 	"os/signal"
 	"syscall"
 	"time"
+
+	"golang.org/x/net/http2"
 )
 
 /*
@@ -39,10 +41,10 @@ func (r *RealServer) Http2Run() {
 		WriteTimeout: time.Second * 3,
 		Handler:      mux,
 	}
-	go func ()  {
-		http2.ConfigureServer(server,&http2.Server{})
+	go func() {
+		http2.ConfigureServer(server, &http2.Server{})
 		//log.Fatal(server.ListenAndServeTLS())
-	}
+	}()
 }
 
 func Start() {
