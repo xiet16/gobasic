@@ -1,4 +1,4 @@
-package main
+package tcp_proxy
 
 import (
 	"bufio"
@@ -116,6 +116,6 @@ func DealDefinePackageHandler(conn net.Conn) {
 	dataBuf.Reset()
 }
 
-func main() {
+func NormalTcpServerTest() {
 	DefinePackageTest()
 }
