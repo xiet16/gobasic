@@ -10,6 +10,13 @@ import (
 	"google.golang.org/grpc/reflection"
 )
 
+/*
+grpc
+rpc (remote producer call) ：是一个远程调用协议，可以解决不同进程间的调用问题（个人理解主要是方便不同开发语言的接口对接）
+rpc 使用http2 ，htt2 是http1.1 的扩展，不是替代，客户端会主动做尝试升级，如果失败，就使用http1.1 通信
+http2 主要是为了解决延迟问题，使用了多路复用和流、帧的传输方式，速度大概是http1.1 的两倍
+*/
+
 type GrpcServer struct{}
 
 func (g *GrpcServer) Count(context.Context, *CountRequest) (*CountResponse, error) {
