@@ -1,0 +1,17 @@
+syntax="proto3";
+
+package grpc_proxy;
+
+option go_package =".;grpc_proxy";
+
+message CountRequest{
+    string name = 1;
+}
+
+message CountResponse{
+    string message =1;
+}
+
+service Greeter{
+    rpc Count (CountRequest) returns (CountResponse){}
+}

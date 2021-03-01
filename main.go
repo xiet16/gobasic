@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"xiet16.com/golearn/comunicate/websocket_reverse_proxy"
+	grpc_proxy "xiet16.com/golearn/comunicate/grpc_proxy/reverse_proxy"
 )
 
 func main() {
@@ -23,7 +23,9 @@ func main() {
 	//basic.HystrixCircuitTest()
 	//basic.HystrixTest2()
 	//basic.WebsocketTest()
-	websocket_reverse_proxy.WebsocketProxyTest()
+	//websocket_reverse_proxy.WebsocketProxyTest()
+	go grpc_proxy.GrpcServerRun()
+	grpc_proxy.GrpcClientRun()
 	//http_reserve_proxy.RealStart()
 	//webhttp.HttpHandleTest()
 }
