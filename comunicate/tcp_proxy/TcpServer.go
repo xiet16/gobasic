@@ -46,7 +46,11 @@ func (serv *TcpServer) Serve(listener net.Listener) error {
 		if err != nil {
 
 		}
+		if ctx == nil || rw == nil {
+
+		}
 	}
+
 	return nil
 }
 
@@ -60,9 +64,9 @@ func (serv *TcpServer) ListenAndServe() error {
 		return errors.New("tcp server can not empty")
 	}
 
-	listener, err := net.Listen("tcp", addr)
-	if err != nil {
-		return err
-	}
+	// listener, err := net.Listen("tcp", addr)
+	// if err != nil {
+	// 	return err
+	// }
 	return nil
 }
