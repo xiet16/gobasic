@@ -24,5 +24,4 @@ func GrpcClientRun() {
 	}
 
 	fmt.Printf("get message: %v", response.Message)
-
 }
