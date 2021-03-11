@@ -26,7 +26,8 @@ func main() {
 	//websocket_reverse_proxy.WebsocketProxyTest()
 	//go grpc_proxy.GrpcServerRun()
 	//grpc_proxy.GrpcClientRun()
-	basic.ContextWithDeadline()
+	//basic.ContextWithDeadline()
+	basic.SliceTest2()
 	//http_reserve_proxy.RealStart()
 	//webhttp.HttpHandleTest()
 }
