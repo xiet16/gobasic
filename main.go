@@ -31,5 +31,5 @@ func main() {
 	//http_reserve_proxy.RealStart()
 	//webhttp.HttpHandleTest()
 	//basic.GetSliceLengthByUnsafe()
-	go_channel.GoroutinueChannel()
+	go_channel.ChannelTimerTest()
 }
