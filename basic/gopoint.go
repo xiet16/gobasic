@@ -21,3 +21,21 @@ func PointerTest() {
 	var pointerVar *int = &intVar
 	fmt.Printf("value=%v,address =%v,var value =%v \n", pointerVar, &pointerVar, *pointerVar)
 }
+
+/*
+GO 语言中，指针的限制:
+1、不能计算
+2、不同类型的指针不能赋值
+3、不同类型的指针不能相互转换
+4、不同类型的指针不能使用 == 或 != 比较
+*/
+
+func CountLimit() {
+	//a := 100
+	//p := &a
+	//p++
+	//p = &a + 3
+
+	// var fp *float32
+	// f := float64(66.6)
+}

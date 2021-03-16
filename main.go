@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"xiet16.com/golearn/basic"
+	"xiet16.com/golearn/basic/go_channel"
 )
 
 func main() {
@@ -27,7 +27,9 @@ func main() {
 	//go grpc_proxy.GrpcServerRun()
 	//grpc_proxy.GrpcClientRun()
 	//basic.ContextWithDeadline()
-	basic.SliceTest2()
+	//basic.SliceTest2()
 	//http_reserve_proxy.RealStart()
 	//webhttp.HttpHandleTest()
+	//basic.GetSliceLengthByUnsafe()
+	go_channel.GoroutinueChannel()
 }

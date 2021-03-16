@@ -1,6 +1,8 @@
 package basic
 
-//关键字 const iota
+/*
+const 是怎么实现的
+*/
 
 const (
 	Title = "基础学习"
