@@ -2,7 +2,8 @@ package main
 
 import (
 	"fmt"
-	"xiet16.com/golearn/basic/go_sync"
+
+	"xiet16.com/golearn/basic/go_channel"
 )
 
 func main() {
@@ -30,6 +31,5 @@ func main() {
 	//http_reserve_proxy.RealStart()
 	//webhttp.HttpHandleTest()
 	//basic.GetSliceLengthByUnsafe()
-	//go_channel.ChannelTimerTest()
-	go_sync.SyncWaitAllTest()
+	go_channel.ChannelTimerTest()
 }
